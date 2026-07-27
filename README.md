@@ -196,3 +196,7 @@ npm run allure:open       # Open Allure report
   menu's slide animation occasionally hadn't settled before the logout link was clicked, 
   causing intermittent failures specific to WebKit. Fixed by explicitly waiting for the 
   link's visibility state before interacting with it.
+- **Non-retrying assertion on dynamic content**: The cart badge count was originally read 
+  once and compared manually, which could read stale/empty state before React finished 
+  re-rendering after re-login. Replaced with an auto-retrying `expect(locator).toHaveText()` 
+  assertion, which retries until the value matches or times out.
