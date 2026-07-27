@@ -6,27 +6,27 @@ A maintainable, production-style test automation framework for [Sauce Demo](http
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         Test Specs (tests/)                      │
-│   login.spec.ts │ inventory.spec.ts │ cart.spec.ts │ checkout  │
+│                         Test Specs (tests/)                     │
+│   login.spec.ts │ inventory.spec.ts │ cart.spec.ts │ checkout   │
 └────────────────────────────┬────────────────────────────────────┘
                              │ uses
 ┌────────────────────────────▼────────────────────────────────────┐
-│                    Page Object Model (pages/)                      │
-│   LoginPage → InventoryPage → CartPage → CheckoutPage            │
-│                         ▲ extends                                │
-│                      BasePage                                    │
+│                    Page Object Model (pages/)                   │
+│   LoginPage → InventoryPage → CartPage → CheckoutPage           │
+│                         ▲ extends                               │
+│                      BasePage                                   │
 └────────────────────────────┬────────────────────────────────────┘
                              │ uses
 ┌────────────────────────────▼────────────────────────────────────┐
-│              Utilities & Fixtures (utils/ │ fixtures/)            │
-│   custom-assertions │ test-data-generator │ users.json             │
-│                                         checkout-data.json         │
+│              Utilities & Fixtures (utils/ │ fixtures/)          │
+│   custom-assertions │ test-data-generator │ users.json          │
+│                                         checkout-data.json      │
 └─────────────────────────────────────────────────────────────────┘
                              │
 ┌────────────────────────────▼────────────────────────────────────┐
-│              Playwright Config + Reporting                         │
-│   Cross-browser (Chromium/Firefox/WebKit) │ Allure │ HTML         │
-│   Trace on failure │ Screenshots │ Video                           │
+│              Playwright Config + Reporting                      │
+│   Cross-browser (Chromium/Firefox/WebKit) │ Allure │ HTML       │
+│   Trace on failure │ Screenshots │ Video                        │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
