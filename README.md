@@ -1,6 +1,6 @@
 # Playwright E-Commerce Automation Framework
 
-A maintainable, production-style test automation framework for [Sauce Demo](https://www.saucedemo.com) built with Playwright, TypeScript, and Allure reporting. Designed for team extensibility — not just a collection of tests, but a proper architectural foundation.
+A maintainable, production-style test automation framework for [Sauce Demo](https://www.saucedemo.com) built with Playwright, TypeScript, and Allure reporting. Designed for team extensibility, not just a collection of tests, but a proper architectural foundation.
 
 ## Framework Architecture
 
@@ -190,3 +190,9 @@ npm run report            # Open Playwright HTML report
 npm run allure:generate   # Generate Allure report
 npm run allure:open       # Open Allure report
 ```
+## Known Issues & Fixes
+
+- **WebKit flake in logout/re-login flow**: Under parallel test execution, the sidebar 
+  menu's slide animation occasionally hadn't settled before the logout link was clicked, 
+  causing intermittent failures specific to WebKit. Fixed by explicitly waiting for the 
+  link's visibility state before interacting with it.
